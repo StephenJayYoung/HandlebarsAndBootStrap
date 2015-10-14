@@ -1,7 +1,7 @@
-var source = $("#some-template1").html(); 
-var template = Handlebars.compile(source); 
+var source1 = $("#some-template1").html(); 
+var template1 = Handlebars.compile(source1); 
 
-var data = {
+var data1 = {
     users: [ {
         person: {
             firstName: "Charlie",
@@ -23,4 +23,4 @@ Handlebars.registerHelper('fullName', function(person) {
   return person.firstName + " " + person.lastName;
 });
 
-$('body').append(template(data));
+$('body').append(template1(data1));

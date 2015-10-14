@@ -31,3 +31,6 @@ Handlebars.registerHelper('fullName', function(person) {
 });
 
 $('body').append(template(data));
+
+//Below is the js for the second template
+
