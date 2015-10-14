@@ -40,7 +40,7 @@
 
       <script type="text/javascript" language="javascript">
          $(document).ready(function() {
-            $("#driver").click(function(event){
+            $("#driver").one("click", function(event){
                $('#stage').load('index.html');
             });
          });
@@ -48,7 +48,7 @@
 
       <script type="text/javascript" language="javascript">
          $(document).ready(function() {
-            $("#driver1").click(function(event){
+            $("#driver1").one("click", function(event){
                $('#stage1').load('index1.html');
             });
          });
