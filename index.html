@@ -1,20 +1,3 @@
-
-<script type="text/javascript"
-    src="handlebars.js" />
-</script>
-
-<script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" />
-</script>
-
-<!-- Bootstrap  -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-<div class = "text-center">
-
-
-<h1>Handlebars and Bootstrap and Ajax Example</h1>
-</div>
-<div class = "container">
 <script id="some-template" type="text/x-handlebars-template"> <table id="table" class="table table-striped table-bordered table-condensed table-hover">
     <thead>
         <th>Name</th>
@@ -31,30 +14,40 @@
         {{/users}} 
     </tbody> 
 </table>
- <div id="stage"</div>
-<div class="text-center">
-<button type="button" class="btn btn-primary" id="driver" value = "Load Data">Load More</button>
-</div>
 </script>
 
+<script>
+var source = $("#some-template").html(); 
+var template = Handlebars.compile(source); 
 
-      <script type="text/javascript" language="javascript">
-         $(document).ready(function() {
-            $("#driver").click(function(event){
-               $('#stage').load('index2.html');
-            });
-         });
-      </script>
+var data = {
+    users: [ {
+        person: {
+            firstName: "Steve",
+            lastName: "Young"
+        },
+        jobTitle: "Jr Front End Developer",
+        email: "stephenjayyoung@gmail.com"
+    }, {
+        person: {
+            firstName: "Mike",
+            lastName: "Tomato"
+        },
+        jobTitle: "Sr Front End Developer",
+        email: "miketom@gmail.com"
+    }, {
+        person: {
+            firstName: "Mary", 
+            lastName: "Smith"
+        },
+        jobTitle: "Sr Back End Developer",
+        email: "Msmith@gmail.com"
+    } ]
+}; 
 
-   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+Handlebars.registerHelper('fullName', function(person) {
+  return person.firstName + " " + person.lastName;
+});
 
-
-<script type="text/javascript"
-    src="javascript1.js" />
+$('body').append(template(data));
 </script>
-
-
-
-
-
-</div>
