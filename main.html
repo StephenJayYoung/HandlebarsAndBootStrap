@@ -23,10 +23,11 @@
 
 <body>
 
-<div class="container">
+<div class="container1">
 		<div class="text-center section1">
 			<button type="button" class="btn btn-primary" id="driver" value = "Show Employees">Show Employees Table</button>
-			 <div id="stage"></div>
+			 <div id="stage"> </div>
+			 			<button type="button" class="btn btn-primary" id="driver2" value = "Hide Friends">Hide Employees Table</button>
 		</div>
 </div>
 
@@ -35,26 +36,55 @@
 <div class="container section2">
 		<div class="text-center">
 			<button type="button" class="btn btn-primary" id="driver1" value = "Show Friends">Show Friends Table</button>
+				<button type="button" class="btn btn-primary" id="driver3" value = "Hide Friends">Remove Friends Table</button>
 			 <div id="stage1"></div>
 		</div>
 </div>
 
 </body>
 
-      <script type="text/javascript" language="javascript">
-         $(document).ready(function() {
-            $("#driver").one("click", function(event){
-               $('#stage').load('index.html');
-            });
-         });
-      </script>
+<script>
+$( "#driver2" ).hide();
+</script>
+
+<script>
+$( "#driver3" ).hide();
+</script>
 
       <script type="text/javascript" language="javascript">
-         $(document).ready(function() {
-            $("#driver1").one("click", function(event){
-               $('#stage1').load('index1.html');
+       $(document).ready(function() {
+            $("#driver").click(function(event){
+               $('#stage').load('index.html');
+               $( "#driver" ).hide();
+               $( "#driver2" ).show(function(){
+               	$("#driver2").click(function(event){
+               		$( ".table" ).remove();
+               $( "#driver2" ).hide();
+               $( "#driver" ).show();
+               });
             });
          });
+            });
       </script>
+
+
+      <script type="text/javascript" language="javascript">
+       $(document).ready(function() {
+            $("#driver1").click(function(event){
+               $('#stage1').load('index1.html');
+               $( "#driver1").hide();
+               $( "#driver3").show(function(){
+               	$("#driver3").click(function(event){
+               		$(".table").remove();
+               $("#driver3").hide();
+               $("#driver1").show();
+               });
+            });
+         });
+            });
+      </script>
+
+
+
 
 
